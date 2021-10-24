@@ -1,0 +1,117 @@
+[role='button'] {
+  /* 尚未點擊的：預設樣式 */
+  display: inline-block;
+  position: relative;
+  padding: 0.4em 0.7em;
+  border: 1px solid hsl(213, 71%, 49%);
+  border-radius: 5px;
+  box-shadow: 0 1px 2px hsl(216, 27%, 55%);
+  color: #fff;
+  text-shadow: 0 -1px 1px hsl(216, 27%, 25%);
+  background-color: hsl(216, 82%, 51%);
+  background-image: linear-gradient(
+    to bottom,
+    hsl(216, 82%, 53%),
+    hsl(216, 82%, 47%)
+  );
+}
+
+[role='button']:hover {
+  /* 滑鼠摸到的： :hover */
+  border-color: hsl(213, 71%, 29%);
+  background-color: hsl(216, 82%, 31%);
+  background-image: linear-gradient(
+    to bottom,
+    hsl(216, 82%, 33%),
+    hsl(216, 82%, 27%)
+  );
+  cursor: default;
+}
+
+[role='button']:focus {
+  /* 成為焦點的： :focus */
+  outline: none;
+}
+
+[role='button']:focus::before {
+  /* 成為焦點的： 自己做一個樣式 */
+  position: absolute;
+  z-index: -1;
+
+  /* button border width - outline width - offset */
+  top: calc(-1px - 3px - 3px);
+  right: calc(-1px - 3px - 3px);
+  bottom: calc(-1px - 3px - 3px);
+  left: calc(-1px - 3px - 3px);
+  border: 3px solid hsl(213, 71%, 49%);
+
+  /* button border radius + outline width + offset */
+  border-radius: calc(5px + 3px + 3px);
+  content: '';
+}
+
+[role='button']:active {
+  /* 滑鼠點擊中（mousedown）： :active */
+  border-color: hsl(213, 71%, 49%);
+  background-color: hsl(216, 82%, 31%);
+  background-image: linear-gradient(
+    to bottom,
+    hsl(216, 82%, 53%),
+    hsl(216, 82%, 47%)
+  );
+  box-shadow: inset 0 3px 5px 1px hsl(216, 82%, 30%);
+}
+
+[role='button'][aria-pressed] {
+  /* 幫有需要切換狀態的範例加上新的顏色（紫色）做為區別 */
+  border-color: hsl(261, 71%, 49%);
+  box-shadow: 0 1px 2px hsl(261, 27%, 55%);
+  text-shadow: 0 -1px 1px hsl(261, 27%, 25%);
+  background-color: hsl(261, 82%, 51%);
+  background-image: linear-gradient(
+    to bottom,
+    hsl(261, 82%, 53%),
+    hsl(261, 82%, 47%)
+  );
+}
+
+[role='button'][aria-pressed]:hover {
+  /* 幫有需要切換狀態的範例加上新的顏色（紫色）做為區別 */
+  border-color: hsl(261, 71%, 29%);
+  background-color: hsl(261, 82%, 31%);
+  background-image: linear-gradient(
+    to bottom,
+    hsl(261, 82%, 33%),
+    hsl(261, 82%, 27%)
+  );
+}
+
+[role='button'][aria-pressed]:focus::before {
+  /* 幫有需要切換狀態的範例加上新的顏色（紫色）做為區別 */
+  border-color: hsl(261, 71%, 49%);
+}
+
+/* 開始為狀態加上樣式 */
+[role='button'][aria-pressed='true'] {
+  padding-top: 0.5em;
+  padding-bottom: 0.3em;
+  border-color: hsl(261, 71%, 49%);
+  background-color: hsl(261, 82%, 31%);
+  background-image: linear-gradient(
+    to bottom,
+    hsl(261, 82%, 63%),
+    hsl(261, 82%, 57%)
+  );
+  box-shadow: inset 0 3px 5px 1px hsl(261, 82%, 30%);
+}
+
+[role='button'][aria-pressed='true']:hover {
+  border-color: hsl(261, 71%, 49%);
+  background-color: hsl(261, 82%, 31%);
+  background-image: linear-gradient(
+    to bottom,
+    hsl(261, 82%, 43%),
+    hsl(261, 82%, 37%)
+  );
+  box-shadow: inset 0 3px 5px 1px hsl(261, 82%, 20%);
+}

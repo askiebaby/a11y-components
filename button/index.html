@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Button Accessibility</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <h1>Button Accessibility</h1>
+
+    <section>
+      <h2>Normal Button</h2>
+      <button>Click a button</button>
+      <input type="button" value="Click an input button" />
+    </section>
+
+    <hr />
+
+    <section>
+      <h2>Fake Button: Before it is accessible</h2>
+      <div>Click a div button</div>
+      <a>Click a link button</a>
+    </section>
+
+    <hr />
+
+    <section>
+      <h2>Button: After it is accessible</h2>
+      <div role="button" tabindex="0" id="print">Print</div>
+      <a role="button" tabindex="0" aria-pressed="false" id="toggle-mute">
+        Mute
+        <i class="fas fa-volume-up"></i>
+      </a>
+    </section>
+    <script src="index.js"></script>
+  </body>
+</html>
