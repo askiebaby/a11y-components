@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Status and Alert Accessibility</title>
+  </head>
+  <body>
+    <section>
+      <h2>role="status"</h2>
+      <button id="status-trigger">Trigger Status</button>
+      <div id="status-example" role="status"></div>
+    </section>
+
+    <section>
+      <h2>role="alert"</h2>
+      <button id="alert-trigger">Trigger Alert</button>
+      <div id="alert-example" role="alert"></div>
+    </section>
+
+    <!--  The following script element contains the content that will be inserted into the status element. -->
+    <script type="text/template" id="status-template">
+      <p>Your changes were automatically saved.</p>
+    </script>
+
+    <!--  The following script element contains the content that will be inserted into the alert element. -->
+    <script type="text/template" id="alert-template">
+      <p><span lang="da">Hej</span>, hello, <span lang="it">ciao</span>, <span lang="ja">こんにちは</span>, <span lang="ko">안녕</span>, <span lang="zh-Hant-TW">你好</span></p>
+    </script>
+
+    <script src="index.js"></script>
+  </body>
+</html>

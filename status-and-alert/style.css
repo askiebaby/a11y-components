@@ -1,0 +1,20 @@
+[role='status'],
+[role='alert'] {
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 4px;
+}
+[role='status'] {
+  border: 2px solid hsl(206, 74%, 54%);
+  background: hsl(206, 74%, 90%);
+}
+
+[role='alert'] {
+  border: 2px solid hsl(100, 20%, 54%);
+  background: hsl(100, 74%, 90%);
+}
+
+[role='status']:empty,
+[role='alert']:empty {
+  display: none;
+}
