@@ -1,0 +1,24 @@
+#single-column-table,
+#single-row-table {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  color: #6c757d;
+  margin: 0;
+}
+
+[role='row'] {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+[role='columnheader'],
+[role='rowheader'] {
+  font-weight: bold;
+}
+
+[role='columnheader'],
+[role='cell'] {
+  /* 這裡的寬度是可根據需求彈性設定的 */
+  flex-basis: 33%;
+}
